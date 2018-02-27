@@ -1,6 +1,4 @@
-import Sample from "./sample";
+import "../css/common.css";
 import "../css/main.css";
 
-let sample = new Sample("velopert");
-sample.say();
 

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>JeongBowl</title>
+    <meta name="description" content="JeongBowl score">
+    <meta name="author" content="donghyun.go">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="container">
+        <h2>점수 페이지</h2>
+        <div>
+            <div class="form-group row">
+                <label for="inputNickname" class="col-2 col-form-label">이름</label>
+                <div class="col-10">
+                    <input type="text" class="form-control" id="inputNickname" minlength="2" placeholder="ex) gd | izzy | sue" name="nickname">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputDate" class="col-2 col-form-label">날짜</label>
+                <div class="col-10">
+                    <input class="form-control" type="date" value="<%= today %>" id="inputDate" name="targetDate">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputScore" class="col-2 col-form-label">점수</label>
+                <div class="col-10">
+                    <input type="text" class="form-control" id="inputScore" minlength="1" aria-describedby="scoreHelp" placeholder="ex) 100/150/200" name="score">
+                    <small id="scoreHelp" class="form-text text-muted">점수를 '/'로 구분해서 입력해주세요!</small>
+                </div>
+            </div>
+            <button id="buttonSave" type="submit" class="btn btn-primary btn-lg btn-block">입력하기</button>
+        </div>
+    </div><!-- /#container -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/js/score.bundle.js"></script>
+</body>
+</html>

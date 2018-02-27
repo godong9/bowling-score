@@ -4,6 +4,7 @@ module.exports = {
   context: __dirname + "/app/public",
 	entry: {
 		main: "./js/main.js",
+		score: "./js/score.js",
 	},
 	output: {
 		path: __dirname + "/dist/public",

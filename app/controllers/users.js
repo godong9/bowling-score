@@ -47,7 +47,7 @@ router.get("/:id", [
   }
 
   UserService.getUser(req.params.id).then(user => {
-    res.send(Response.success({ user: user, }));
+    res.send(AjaxResponse.success({ user: user, }));
   }).catch(err => next(err));
 });
 
