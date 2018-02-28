@@ -39,12 +39,12 @@ router.get("/score/:nickname", (req, res, next) => {
         return scoreRow.dataValues;
       });
       const groupedScoreList = _.chain(scoreList)
-        .groupBy("targetDate")
         .orderBy(["targetDate", "createdAt"], ['desc', 'desc'])
-        .map(score => {
+        .groupBy("targetDate")
+        .map(scoreList => {
           return {
-            targetDate: score.targetDate,
-            score: score.score,
+            targetDate: scoreList[0].targetDate,
+            scoreList: scoreList,
           }
         })
         .value();

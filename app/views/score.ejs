@@ -41,7 +41,13 @@
         <h4>점수 목록<h4>
         <div>
             <% for(var i = 0; i < scoreList.length; i++) { %>
-            <p><%= scoreList[i].score %></p>
+            <p>
+                <span><%= scoreList[i].targetDate %></span>
+                <% var targetScoreList = scoreList[i].scoreList; %>
+                <% for(var j = 0; j < targetScoreList.length; j++) { %>
+                <span><%= targetScoreList[j].score %></span>
+                <% } %>
+            </p>
             <% } %>
         </div>
     </div><!-- /#container -->
