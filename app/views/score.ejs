@@ -18,14 +18,10 @@
 
 <body>
     <div id="container">
-        <h2>점수 페이지</h2>
+        <h2><%= nickname %>'s 점수</h2>
+        <h4>점수 입력</h4>
         <div>
-            <div class="form-group row">
-                <label for="inputNickname" class="col-2 col-form-label">이름</label>
-                <div class="col-10">
-                    <input type="text" class="form-control" id="inputNickname" minlength="2" placeholder="ex) gd | izzy | sue" name="nickname">
-                </div>
-            </div>
+            <input type="hidden" class="form-control" id="inputNickname" value="<%= nickname %>" name="nickname">
             <div class="form-group row">
                 <label for="inputDate" class="col-2 col-form-label">날짜</label>
                 <div class="col-10">
@@ -40,6 +36,13 @@
                 </div>
             </div>
             <button id="buttonSave" type="submit" class="btn btn-primary btn-lg btn-block">입력하기</button>
+        </div>
+
+        <h4>점수 목록<h4>
+        <div>
+            <% for(var i = 0; i < scoreList.length; i++) { %>
+            <p><%= scoreList[i].score %></p>
+            <% } %>
         </div>
     </div><!-- /#container -->
 
