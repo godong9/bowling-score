@@ -34,7 +34,10 @@ router.get("/score/:nickname", (req, res, next) => {
       }
       return ScoreService.getScoresByUserId(user.id);
     })
-    .then(scoreList => {
+    .then(scoreListRow => {
+      const scoreList = _.map(scoreListRow, scoreRow => {
+        return scoreRow.dataValues;
+      });
       const groupedScoreList = _.chain(scoreList)
         .groupBy("targetDate")
         .orderBy(["targetDate", "createdAt"], ['desc', 'desc'])
