@@ -38,6 +38,15 @@ router.get("/score/:nickname", (req, res, next) => {
       const scoreList = _.map(scoreListRow, scoreRow => {
         return scoreRow.dataValues;
       });
+      const avgScore = _.meanBy(scoreList, "score").toFixed(1);
+      const lowScore = _.minBy(scoreList, "score").score;
+      const highScore = _.maxBy(scoreList, "score").score;
+      const latestAvgScore = _.chain(scoreList)
+        .orderBy(["targetDate", "createdAt"], ['desc', 'desc'])
+        .take(10)
+        .meanBy("score")
+        .value().toFixed(1);
+
       const groupedScoreList = _.chain(scoreList)
         .orderBy(["targetDate", "createdAt"], ['desc', 'desc'])
         .groupBy("targetDate")
@@ -49,10 +58,13 @@ router.get("/score/:nickname", (req, res, next) => {
         })
         .value();
 
-      console.log(groupedScoreList);
       res.render("score", {
         nickname: req.params.nickname,
         scoreList: groupedScoreList,
+        avgScore: avgScore || 0,
+        latestAvgScore: latestAvgScore || 0,
+        lowScore: lowScore || 0,
+        highScore: highScore || 0,
         today: moment().format("YYYY-MM-DD"),
       });
     })

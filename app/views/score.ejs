@@ -32,12 +32,17 @@
             <div class="form-group row">
                 <label for="inputScore" class="col-2 col-form-label">점수</label>
                 <div class="col-10">
-                    <input type="text" class="form-control" id="inputScore" minlength="1" aria-describedby="scoreHelp" placeholder="ex) 100,150,200" name="score">
-                    <small id="scoreHelp" class="form-text text-muted">점수를 ','로 구분해서 입력해주세요!</small>
+                    <input type="text" class="form-control" id="inputScore" minlength="1" aria-describedby="scoreHelp" placeholder="ex) 100/150,200" name="score">
+                    <small id="scoreHelp" class="form-text text-muted">점수를 '/' 또는 ','로 구분해서 입력해주세요!</small>
                 </div>
             </div>
             <button id="buttonSave" type="submit" class="btn btn-primary btn-lg btn-block">입력하기</button>
         </div>
+
+        <br>
+
+        <h4>Avg: <span class="h4 score-highlight"><%= avgScore %></span> / 10 Avg: <span class="h4 score-highlight"><%= latestAvgScore %></span></h4>
+        <h4>Low: <span class="h4 score-highlight"><%= lowScore %></span> / High: <span class="h4 score-highlight"><%= highScore %></span></h4>
 
         <br>
         <h4>점수 목록</h4>
