@@ -38,9 +38,18 @@ router.get("/score/:nickname", (req, res, next) => {
       const scoreList = _.map(scoreListRow, scoreRow => {
         return scoreRow.dataValues;
       });
+
+      let lowScore = 0;
+      let highScore = 0;
+      try {
+        lowScore = _.minBy(scoreList, "score").score;
+        highScore = _.maxBy(scoreList, "score").score;
+      } catch(e) {
+        lowScore = 0;
+        highScore = 0;
+      }
+
       const avgScore = _.meanBy(scoreList, "score").toFixed(1);
-      const lowScore = _.minBy(scoreList, "score").score;
-      const highScore = _.maxBy(scoreList, "score").score;
       const latestAvgScore = _.chain(scoreList)
         .orderBy(["targetDate", "createdAt"], ['desc', 'desc'])
         .take(10)
