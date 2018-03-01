@@ -31,7 +31,7 @@ router.post("/", [
     res.send(AjaxResponse.error(errors.array()));
     return;
   }
-  req.body.score = req.body.score.replace(/[^0-9\/]/gi, "");
+  req.body.score = req.body.score.replace(/[^0-9,]/gi, "");
 
   UserService.getUserByNickname(req.body.nickname)
     .then(user => {
@@ -44,7 +44,7 @@ router.post("/", [
           return Promise.reject("잘못된 점수가 포함되어 있습니다.");
         }
         ScoreService.saveScore({
-          userId: 1,
+          userId: user.id,
           targetDate: req.body.targetDate,
           score: score,
         });
