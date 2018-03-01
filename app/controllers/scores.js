@@ -57,4 +57,18 @@ router.post("/", [
     .catch(e => res.send(AjaxResponse.error(e)));
 });
 
+/**
+ * @api {delete} /scores/user/:userId/date/:targetDate Delete score
+ * @apiName DeleteScore
+ * @apiGroup Score
+ */
+router.delete("/user/:userId/date/:targetDate", (req, res, next) => {
+  ScoreService.deleteScore(req.params.userId, req.params.targetDate)
+    .then(() => {
+      res.send(AjaxResponse.success());
+    })
+    .catch(e => res.send(AjaxResponse.error(e)));
+});
+
+
 module.exports = router;

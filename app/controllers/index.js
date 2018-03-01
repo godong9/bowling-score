@@ -27,12 +27,14 @@ router.get("/", (req, res) => {
 /* GET score page */
 router.get("/score/:nickname", (req, res, next) => {
   const nickname = req.params.nickname;
+  let userId = null;
   UserService.getUserByNickname(nickname)
     .then(user => {
       if (!user) {
         return next("Not exist user");
       }
-      return ScoreService.getScoresByUserId(user.id);
+      userId = user.id;
+      return ScoreService.getScoresByUserId(userId);
     })
     .then(scoreListRow => {
       const scoreList = _.map(scoreListRow, scoreRow => {
@@ -68,6 +70,7 @@ router.get("/score/:nickname", (req, res, next) => {
         .value();
 
       res.render("score", {
+        userId: userId,
         nickname: req.params.nickname,
         scoreList: groupedScoreList,
         avgScore: avgScore || 0,

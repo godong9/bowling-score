@@ -31,6 +31,15 @@ function saveScore(params) {
   return Score.create(modelParams);
 }
 
+function deleteScore(userId, targetDate) {
+  return Score.destroy({
+    where: {
+      userId: userId,
+      targetDate: targetDate,
+    },
+  });
+}
+
 function deleteAll() {
   return Score.destroy({ truncate: true, });
 }
@@ -41,5 +50,6 @@ module.exports = {
   getScoresByUserId: getScoresByUserId,
   getScore: getScore,
   saveScore: saveScore,
+  deleteScore: deleteScore,
   deleteAll: deleteAll,
 };

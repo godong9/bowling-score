@@ -26,6 +26,16 @@ Score.prototype.bind = function() {
       }
     });
   });
+
+  $(".buttonDelete").click(function() {
+    const userId = $("#inputUserId").val();
+    const targetDate = $(this).parent().data("date");
+    HttpUtil.deleteData(`/scores/user/${userId}/date/${targetDate}`, {}, function(err, data) {
+      if (data && data.status === "SUCCESS") {
+        location.reload();
+      }
+    });
+  });
 };
 
 export default new Score();

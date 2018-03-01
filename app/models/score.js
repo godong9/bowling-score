@@ -24,10 +24,10 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: true,
   });
 
-    Score.associate = (models) => {
-      Score.belongsTo(models.User, {
-        as: "user",
-      });
+  Score.associate = (models) => {
+    Score.belongsTo(models.User, {
+      as: "user",
+    });
   };
 
   return Score;
