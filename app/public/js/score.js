@@ -1,4 +1,5 @@
 import "../css/common.css";
+import "../css/score.css";
 import HttpUtil from "./httpUtil";
 
 function Score() {

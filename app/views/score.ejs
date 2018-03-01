@@ -19,8 +19,9 @@
 <body>
     <div id="container">
         <h2><%= nickname %>'s 점수</h2>
+        <br>
         <h4>점수 입력</h4>
-        <div>
+        <div class="score-input-container">
             <input type="hidden" class="form-control" id="inputNickname" value="<%= nickname %>" name="nickname">
             <div class="form-group row">
                 <label for="inputDate" class="col-2 col-form-label">날짜</label>
@@ -38,16 +39,19 @@
             <button id="buttonSave" type="submit" class="btn btn-primary btn-lg btn-block">입력하기</button>
         </div>
 
-        <h4>점수 목록<h4>
+        <br>
+        <h4>점수 목록</h4>
         <div>
             <% for(var i = 0; i < scoreList.length; i++) { %>
-            <p>
-                <span><%= scoreList[i].targetDate %></span>
-                <% var targetScoreList = scoreList[i].scoreList; %>
-                <% for(var j = 0; j < targetScoreList.length; j++) { %>
-                <span><%= targetScoreList[j].score %></span>
-                <% } %>
-            </p>
+            <div class="score-container border">
+                <p class="font-weight-bold"><%= scoreList[i].targetDate %></p>
+                <ul class="list-inline">
+                    <% var targetScoreList = scoreList[i].scoreList; %>
+                    <% for(var j = 0; j < targetScoreList.length; j++) { %>
+                    <li class="list-inline-item"><%= targetScoreList[j].score %></li>
+                    <% } %>
+                </ul>
+            </div>
             <% } %>
         </div>
     </div><!-- /#container -->

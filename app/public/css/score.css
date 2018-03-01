@@ -1,0 +1,20 @@
+h2 {
+    margin-bottom: .1rem;
+}
+
+.score-input-container {
+    margin-top: .5rem;
+}
+
+.score-container {
+    margin-top: .5rem;
+    padding: 5px;
+}
+
+.score-container > p {
+    margin: 2px;
+}
+
+.score-container > ul {
+    margin: 2px;
+}
