@@ -39,7 +39,7 @@ router.post("/", [
         return res.send(AjaxResponse.error("존재하지 않는 유저입니다."));
       }
 
-      const promiseList = _.map(req.body.score.split("/"), score => {
+      const promiseList = _.map(req.body.score.split(","), score => {
         if (parseInt(score) > 300) {
           return Promise.reject("잘못된 점수가 포함되어 있습니다.");
         }

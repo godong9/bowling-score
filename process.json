@@ -1,0 +1,16 @@
+{
+  "apps" : [{
+    "name": "BowlingScore",
+    "script": "dist/app.js",
+    "instances": 1,
+    "exec_mode": "cluster",
+    "cwd": "/home/godong/bowling-score",
+    "log_date_format": "YYYY-MM-DD HH:mm Z",
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "env_production" : {
+      "NODE_ENV": "production"
+    }
+  }]
+}
