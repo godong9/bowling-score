@@ -5,6 +5,7 @@ module.exports = {
 	entry: {
 		main: "./js/main.js",
 		score: "./js/score.js",
+		game: "./js/game.js",
 	},
 	output: {
 		path: __dirname + "/dist/public",

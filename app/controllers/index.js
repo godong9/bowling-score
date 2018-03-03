@@ -24,6 +24,11 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
+/* GET game page */
+router.get("/game", (req, res) => {
+  res.render("game");
+});
+
 /* GET score page */
 router.get("/score/:nickname", (req, res, next) => {
   const nickname = req.params.nickname;

@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>JeongBowl</title>
+    <meta name="description" content="JeongBowl game">
+    <meta name="author" content="donghyun.go">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="container">
+        <h2>정볼 게임</h2>
+        <div class="score-input-container">
+            <div class="form-group row">
+                <label for="inputFirstTeam" class="col-3 col-form-label">1팀 에버</label>
+                <div class="col-6">
+                    <input type="text" class="form-control" id="inputFirstTeam" minlength="1" placeholder="ex) 100,150,200">
+                </div>
+                <div class="col-3">
+                    <input type="text" class="form-control" id="inputFirstTeamBonus" minlength="1" value="0" placeholder="ex) 10">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="inputSecondTeam" class="col-3 col-form-label">2팀 에버</label>
+                <div class="col-6">
+                    <input type="text" class="form-control" id="inputSecondTeam" minlength="1" placeholder="ex) 100,150,200">
+                </div>
+                <div class="col-3">
+                    <input type="text" class="form-control" id="inputSecondTeamBonus" minlength="1" value="0" placeholder="ex) 10">
+                </div>
+            </div>
+
+            <h4>1팀 점수: <span id="firstTeamTotal">0</span></h4>
+            <h4>2팀 점수: <span id="secondTeamTotal">0</span></h4>
+
+            <button id="buttonStart" type="submit" class="btn btn-primary btn-lg btn-block">게임시작</button>
+        </div>
+
+        <div class="score-result-container">
+            <div class="form-group row">
+                <label for="inputFirstTeamResult" class="col-3 col-form-label">1팀 결과</label>
+                <div class="col-9">
+                    <input type="text" class="form-control" id="inputFirstTeamResult" minlength="1" placeholder="ex) 100,150,200">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="inputSecondTeamResult" class="col-3 col-form-label">2팀 결과</label>
+                <div class="col-9">
+                    <input type="text" class="form-control" id="inputSecondTeamResult" minlength="1" placeholder="ex) 100,150,200">
+                </div>
+            </div>
+
+            <h4>1팀 총점 + 핸디: <span id="firstTeamResultTotal">0</span></h4>
+            <h4>2팀 총점 + 핸디: <span id="secondTeamResultTotal">0</span></h4>
+
+            <button id="buttonEnd" type="submit" class="btn btn-success btn-lg btn-block">게임종료</button>
+
+        </div>
+
+        <h3 class="final-result">결과: <span id="finalResult"></span></h3>
+
+    </div><!-- /#container -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script>
+    <script src="/js/game.bundle.js"></script>
+</body>
+</html>
